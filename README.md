@@ -6,6 +6,10 @@
 
 - A user posts API with functionality to create a post, list all posts, retrieve a single post by id, edit a post with a particular id, and delete a post by id.
 
+- A user comments API with functionality to list all comments, create a comment, and retrieve, update and delete a comment by id.
+
+- A user likes API with functionality to list all likes, create a like, and retrieve or delete a like by id.
+
 **Technologies used:** 
 
 - django-3.2.20 
