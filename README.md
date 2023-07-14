@@ -2,9 +2,9 @@
 
 **Features:**
 
-- A profile API with functionality to list all profiles, retrieve a single profile by id, and edit a profile with a particular id.
+- A user profile API with functionality to list all profiles, retrieve a single profile by id, and edit a profile with a particular id.
 
-- A posts API with functionality to create a post, list all posts, retrieve a single post by id, edit a post with a particular id, and delete a post by id.
+- A user posts API with functionality to create a post, list all posts, retrieve a single post by id, edit a post with a particular id, and delete a post by id.
 
 **Technologies used:** 
 
