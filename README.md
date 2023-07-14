@@ -10,6 +10,8 @@
 
 - A user likes API with functionality to list all likes, create a like, and retrieve or delete a like by id.
 
+- A user followers API with functionality to list all follows, create a follow, and retrieve or delete a follow by id.
+
 **Technologies used:** 
 
 - django-3.2.20 
