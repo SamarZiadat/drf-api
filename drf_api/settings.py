@@ -43,10 +43,12 @@ if 'DEV' in os.environ:
              'NAME': BASE_DIR / 'db.sqlite3',
          }
      }
+     print("Connected to Local DB")
 else:
      DATABASES = {
          'default': dj_database_url.parse(os.environ.get("DATABASE_URL"))
      }
+     print("Connected to Elephant SQL")
      
 REST_USE_JWT = True
 JWT_AUTH_SECURE = True
@@ -66,7 +68,7 @@ SECRET_KEY = 'django-insecure-6wb#ip0z2!i%o*pqxqwu4wmwrn)l_y!dnzo_k=#f*@%ttv2e!o
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['8000-samarziadat-drfapi-vim90khonlo.ws-eu101.gitpod.io']
+ALLOWED_HOSTS = ['localhost', 'drf-api-samar.herokuapp.com']
 
 
 # Application definition
@@ -89,6 +91,7 @@ INSTALLED_APPS = [
     'allauth.account',
     'allauth.socialaccount',
     'dj_rest_auth.registration',
+    'corsheaders',
 
     'profiles',
     'posts',
@@ -98,6 +101,7 @@ INSTALLED_APPS = [
 ]
 SITE_ID = 1
 MIDDLEWARE = [
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -106,6 +110,15 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
+
+if 'CLIENT_ORIGIN' in os.environ:
+    CORS_ALLOWED_ORIGINS = [
+         os.environ.get('CLIENT_ORIGIN')
+    ]
+else:
+    CORS_ALLOWED_ORIGIN_REGEXES = [
+         r"^https://.*\.gitpod\.io$",
+    ]
 
 ROOT_URLCONF = 'drf_api.urls'
 
@@ -126,17 +139,6 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'drf_api.wsgi.application'
-
-
-# Database
-# https://docs.djangoproject.com/en/3.2/ref/settings/#databases
-
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
-}
 
 
 # Password validation
