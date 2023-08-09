@@ -70,7 +70,7 @@ SECRET_KEY = 'django-insecure-6wb#ip0z2!i%o*pqxqwu4wmwrn)l_y!dnzo_k=#f*@%ttv2e!o
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = [os.environ.get('ALLOWED_HOST', 'localhost', 'drf-api-samar-918d34c4a809.herokuapp.com')]
+ALLOWED_HOSTS = [os.environ.get('ALLOWED_HOST', 'localhost', 'https://drf-api-samar-918d34c4a809.herokuapp.com')]
 
 
 # Application definition
